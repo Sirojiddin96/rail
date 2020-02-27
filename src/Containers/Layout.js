@@ -10,7 +10,7 @@ class Layout extends Component{
     return(
         <Wrapper>
             <Header/>
-           <MainBody/>
+          {this.props.children}
            <Footer/>
         </Wrapper>
     )

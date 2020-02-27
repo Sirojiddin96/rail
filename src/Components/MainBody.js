@@ -3,50 +3,27 @@ import styled from 'styled-components'
 
 class MainBody extends Component {
     render() {
+        const {images}=this.props;
+        const {notes}=this.props
         return (
             <Wrapper>
                 <MainHeader>
                         <h1>O'zbekistonning mashhur manzilgohlari</h1>
                         <div className="inner-container">
-                             <div className="images">
-                                <img  className="image" src="https://live.staticflickr.com/2813/33731445901_a09f0031b3_b.jpg" alt="Samarkand"/>
-                            </div>
-                            <div className="images">
-                                <img  className="image" src="https://www.thebeautifulride.com/img/steps/1/buxoro.jpg" alt="Buxoro"/>
-                            </div>
-                              <div className="images">
-                                <img className="image" src="https://cdn.pixabay.com/photo/2019/10/26/12/40/uzbekistan-4579369_960_720.jpg" alt="Xiva"/>
-                            </div>
-                            <div className="images">
-                                <img className="image"src="https://www.pv.uz/uploads/newspapers/5177a4216714198b087b4d025313e3e2.jpg" alt="Shahrisabz"/>
-                            </div>  
-                        </div>
+                        {images.map((image,index)=>{
+                            return  <div className="images">
+                                        <img  className="image" src={image.image} key={index}/>
+                                    </div>
+                        })}
+                          </div>
                         <h1>Yo'lovchilarga eslatma</h1>
                         <div className="middle-contaier">
-                            <div className="notes">
-                                <img className="note-images" alt="bilet"/>
-                                <span> bilet xarid qilish yo'li</span>
-                            </div>
-                            <div className="notes">
-                                <img className="note-images" alt="general"/>
-                                <span>Umimiy ma'lomot</span>
-                            </div>
-                            <div className="notes">
-                                <img className="note-images" alt="Passangers"/>
-                                <span>Yo'lovchi tashish qoidalari</span>
-                            </div>
-                            <div className="notes">
-                            <img className="note-images" alt="insurance"/>
-                                Sug'urta axborotlari
-                            </div>
-                            <div className="notes">
-                            <img className="note-images" alt="bonus"/>
-                                Imtiyozlar va bonuslar
-                            </div>
-                            <div className="notes">
-                            <img className="note-images" alt="most_asked"/>
-                                Ko'p so'raladigan savollar
-                            </div>
+                            {notes.map((note,index)=>{
+                                return  <div className="notes">
+                                        <img className="note-images" src={note.image} key={index}/>
+                                         <span> bilet xarid qilish yo'li</span>
+                                    </div>
+                            })}
                         </div>
                 </MainHeader>
             </Wrapper>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 
 class Header extends Component{
     state={
@@ -34,7 +35,7 @@ class Header extends Component{
                             </div>
                     </div>
                     <div className="login">
-                       <li>Login</li>
+                       <Link style={{textDecoration:'none',color:'black'}} to="/Login"><li>Login</li></Link>  
                     </div>
                 </div>
                 </div>
