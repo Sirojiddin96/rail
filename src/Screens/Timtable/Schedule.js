@@ -1,16 +1,15 @@
-import React, {Component} from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
+import styled from 'styled-components';
 
-class Header extends Component{
+class Schedule extends Component {
     state={
         dropdown:false,
         isOPen:false
     }
-    render(){
-    return(
-        <Wrapper>
-            <MainHeader>
+    render() {
+        return (
+            <Wrapper> 
                 <div className="mainheader" > 
                 <div className="left">
                     <div className="logo-contaier">
@@ -24,7 +23,7 @@ class Header extends Component{
                 <div className="right">
                     <div className="right-container">
                     <div className="schedule">
-                        <Link style={{textDecoration:'none', color:'black'}} to="/Schedule"><li>Poyezdlar jadvali</li></Link> 
+                        <li>Poyezdlar jadvali</li> 
                     </div>
                     <div className="languages">
                         <li  style={{listStyle:'none'}}onClick={()=>this.setState({dropdown:!this.state.dropdown})}>Language</li>
@@ -39,54 +38,13 @@ class Header extends Component{
                     </div>
                 </div>
                 </div>
-                </div>
-                <div className="header-form">
-                    <h1  className="header-form-first">Chipta Sotib Olish</h1>
-                    <h3  className="header-form-second">Jadvalni bilish va chipta sotib olish uchun yo'nalishni va vaqtni tanlang</h3>
-                <div className="main-form">
-                    <div className="inner-main-form">
-                        <input 
-                        className="inner-main-form-input"
-                        type="text"
-                        placeholder="QAYERDAN"
-                        />
-                        <button className="inner-main-change-btn">change</button>
-                        <input 
-                        className="inner-main-form-input"
-                        type="text"
-                        placeholder="QAYERGA"
-                        />
-                        <input className="inner-main-form-input"
-                        type="text"
-                        placeholder="VAQT"
-                        />
-                        <button className="inner-main-form-btn" type="submit">TOPISH</button>
-                    </div>
-                </div>
-                <div className="cities">
-                    <ul className="ul-list">
-                        <li><img/></li>
-                        <li>Toshkent</li>
-                        <li>Nukus</li>
-                        <li>Samarqand</li>
-                        <li>Xiva</li>
-                        <li>Buxoro</li>
-                        <li>Andijon</li>
-                        <li>Qarshi</li>
-                        <li>Navoi</li>
-                        <li>Jizzax</li>
-                        <li>Termiz</li>
-                        <li>Gulistan</li>
-                        <li>Urganch</li>
-                    </ul>
-                </div>
-                </div>
-            </MainHeader>
-        </Wrapper>
-    )
+                </div> 
+            </Wrapper>
+        );
+    }
 }
-}
-export default Header;
+
+export default Schedule;
 
 const Wrapper=styled.div`
     width:100%;
@@ -96,15 +54,6 @@ const Wrapper=styled.div`
     flex-direction:row;
     justify-content:space-around;
     position:relative;
-`
-const MainHeader=styled.div`
-    width:100%;
-    height:400px;
-    display:flex;
-    justify-content:space-around;
-    flex-direction:column;
-    align-items:center;
-    background-color:darkgrey;
     .mainheader{
         width: 90%;
         height:90px;
@@ -253,106 +202,4 @@ const MainHeader=styled.div`
             }
         }
     }
-    .header-form{
-        width:80%;
-        height:300px;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:space-around;
-        .header-form-first{
-            width:100%;
-            height:67px;
-            font-family:'Segoe UI', sans-serif;
-            color:#FFFFFF;
-            font-size:56px;
-            font-weight:700;
-            text-align:center;
-            margin:0;
-            padding:0;
-        }
-        .header-form-second{
-            font-family:'Segoe UI', sans-serif;
-            color:#FFFFFF;
-            font-size:20px;
-            font-weight:700;
-
-    }
-    .main-form{
-        width:100%;
-        height:100px;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:space-around;
-        margin:0;
-        padding:0;
-        .inner-main-form{
-            width:90%;
-            height:95px;
-            display:flex;
-            flex-direction:row;
-            align-items:center;
-            justify-content:space-around;
-            .inner-main-form-input{
-                width:30%;
-                height:40px;
-                border:1px solid lightgray;
-                font-size:25px;
-                padding:6px 12px;
-
-            }
-            .inner-main-form-btn{
-                width:30%;
-                height:54px;
-                border:1px solid lightgray;
-                background-color:white;
-                font-size:25px;
-                padding:6px 12px;
-                color:gray;
-                cursor: pointer;
-                :hover{
-                    background-color:darkblue;
-                }
-            }
-            .inner-main-change-btn{
-                width:10%;
-                height:54px;
-                border:1px solid lightgray;
-                background-color:white;
-                padding:6px 12px;
-                color:gray;
-                cursor:pointer;
-                :hover{
-                    background-color:darkblue;
-                }
-                
-                
-            }
-        }
-
-    }
-    .cities{
-        width:100%;
-        height:100px;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:space-around;
-        position: relative;
-        .ul-list{
-            width:80%;
-            height:24px;
-            display:flex;
-            flex-direction:row;
-            align-items:center;
-            justify-content:space-around;
-            list-style:none;
-            color:#FFFFFF;
-            margin:0px 8px 0px 0px;
-            font-size:15px;
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-        }
-    }
-}
 `
